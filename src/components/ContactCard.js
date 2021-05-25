@@ -1,6 +1,6 @@
 import defaultIma from "../images/contactIma.jpg";
 
-const ContactCard = ({ contact }) => {
+const ContactCard = ({ contact, deleteContact }) => {
     return (
         <div className='item' key={contact.id}>
             <div className='content'>
@@ -15,6 +15,7 @@ const ContactCard = ({ contact }) => {
             <i
                 style={{ color: "red", marginTop: "1rem" }}
                 className='trash alternate outline icon'
+                onClick={() => deleteContact(contact.id)}
             ></i>
         </div>
     );
