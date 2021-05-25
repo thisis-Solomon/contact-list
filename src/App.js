@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { uuid } from "uuidv4";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
@@ -30,9 +31,31 @@ const App = () => {
 
     return (
         <div className='ui container'>
-            <Header />
-            <AddContact addContactHandle={addContactHandle} />
-            <ContactList contacts={contacts} removeContactList={removeContactList}/>
+            <Router>
+                {/* <Header /> */}
+                <Switch>
+                    <Route
+                        path='/'
+                        exact
+                        render={(props) => (
+                            <ContactList
+                                {...props}
+                                contacts={contacts}
+                                removeContactList={removeContactList}
+                            />
+                        )}
+                    />
+                    <Route
+                        path='/add'
+                        render={(props) => (
+                            <AddContact
+                                {...props}
+                                addContactHandle={addContactHandle}
+                            />
+                        )}
+                    />
+                </Switch>
+            </Router>
         </div>
     );
 };

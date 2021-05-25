@@ -12,8 +12,9 @@ export default class AddContact extends Component {
             alert("All the fields are mandatory");
             return;
         }
-        this.props.addContactHandle(this.state)
+        this.props.addContactHandle(this.state);
         this.setState({ name: "", email: "" });
+        this.props.history.push("/");
     };
 
     handleOnChange = (event) => {
@@ -26,7 +27,6 @@ export default class AddContact extends Component {
                 <h2>Add Contact</h2>
 
                 <form className='ui form' onSubmit={this.addContactHandler}>
-                    <h2>Add contact</h2>
                     <div className='filed'>
                         <label htmlFor='name'>Name</label>
                         <input
