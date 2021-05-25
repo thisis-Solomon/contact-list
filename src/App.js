@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { uuid } from "uuidv4";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
+import DetailedContact from "./components/DetailedContact";
 import Header from "./components/Header";
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
                             />
                         )}
                     />
+                    <Route path="/contact/:id" component={DetailedContact}/>
                 </Switch>
             </Router>
         </div>

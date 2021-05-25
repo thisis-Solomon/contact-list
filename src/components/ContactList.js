@@ -20,7 +20,7 @@ const ContactList = ({ contacts, removeContactList }) => {
             <h2>
                 Contact list
                 <Link to='/add'>
-                    <button className='ui button blue right'>
+                    <button className='ui button blue '>
                         Add contact
                     </button>
                 </Link>
